@@ -48,7 +48,8 @@ function renderGridPeserta() {
     const gridContainer = document.getElementById('peserta-grid');
     gridContainer.innerHTML = '';
     if (peserta.length === 0) {
-        gridContainer.innerHTML = `<p class="text-center col-span-full text-slate-500">Mulai dengan "Sesi Baru" atau "Lanjutkan Sesi".</p>`;
+        // Diperbaiki: Menggunakan kamus terjemahan
+        gridContainer.innerHTML = `<p class="text-center col-span-full text-slate-500" data-translate-key="start-with-new-session">${translations[currentLanguage]['start-with-new-session']}</p>`;
         return;
     }
     peserta.forEach(p => {
@@ -69,7 +70,8 @@ function renderLeaderboard() {
     const top10 = dinilai.slice(0, 10);
     leaderboardContainer.innerHTML = '';
     if (dinilai.length === 0) {
-        leaderboardContainer.innerHTML = `<p class="text-center text-sm text-slate-500">Belum ada penilaian.</p>`;
+        // Diperbaiki: Menggunakan kamus terjemahan
+        leaderboardContainer.innerHTML = `<p class="text-center text-sm text-slate-500" data-translate-key="no-assessment-yet">${translations[currentLanguage]['no-assessment-yet']}</p>`;
         return;
     }
     top10.forEach((p, index) => {
@@ -90,7 +92,8 @@ function renderBadgePanel() {
     const allBadges = peserta.flatMap(p => p.badges.map(b => ({ namaPeserta: p.nama, ...b }))).reverse();
     badgePanelContainer.innerHTML = '';
     if(allBadges.length === 0) {
-        badgePanelContainer.innerHTML = `<p class="text-center text-sm text-slate-500">Belum ada badge.</p>`;
+        // Diperbaiki: Menggunakan kamus terjemahan
+        badgePanelContainer.innerHTML = `<p class="text-center text-sm text-slate-500" data-translate-key="no-badges-yet">${translations[currentLanguage]['no-badges-yet']}</p>`;
         return;
     }
     allBadges.forEach(badge => {
@@ -105,20 +108,27 @@ function renderControlsGameIndividu() {
     const controlsTitle = document.getElementById('controls-title');
     const pointButtonsContainer = document.getElementById('point-buttons-container');
     const pesertaTerpilih = peserta.find(p => p.id === pesertaTerpilihId);
-    if(pesertaTerpilih) {
-        controlsTitle.innerHTML = `Memberi Poin untuk: <span class="font-bold text-blue-500">${pesertaTerpilih.nama}</span>`;
+    const langDict = translations[currentLanguage]; // Ambil kamus bahasa saat ini
+
+    if (pesertaTerpilih) {
+        controlsTitle.innerHTML = `${langDict['giving-points-for']} <span class="font-bold text-blue-500">${pesertaTerpilih.nama}</span>`;
     } else if (peserta.length > 0) {
-        controlsTitle.textContent = 'Pilih Peserta';
+        controlsTitle.textContent = langDict['select-participant'];
     } else {
-        controlsTitle.textContent = 'Muat data peserta';
+        controlsTitle.textContent = langDict['load-or-select-participant'];
     }
+
     pointButtonsContainer.innerHTML = '';
     TipePoin.forEach(tipe => {
         const button = document.createElement('button');
         button.className = `point-btn text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center shadow-md disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95 ${tipe.warna}`;
         button.onclick = () => beriPoin(tipe.nilai, tipe.key);
         button.disabled = pesertaTerpilihId === null;
-        button.innerHTML = `${tipe.ikon || ''} ${tipe.label} (+${tipe.nilai})`;
+
+        // DIperbaiki: Mengambil teks dari kamus menggunakan tipe.labelKey
+        const buttonText = langDict[tipe.labelKey]; 
+        button.innerHTML = `${buttonText} (+${tipe.nilai})`;
+
         pointButtonsContainer.appendChild(button);
     });
 }

@@ -3,6 +3,13 @@
 function setupFortuneWheelListeners() {
     document.getElementById('spin-btn').addEventListener('click', () => {
         if (peserta.length === 0) return;
+        
+        // Diperbaiki: Memainkan suara roda
+        if (wheelSound) wheelSound.pause();
+        wheelSound = new Audio('https://raw.githubusercontent.com/tamawithai/gameclassv1/refs/heads/dev/assets/sounds/wheel.mp3');
+        wheelSound.loop = true;
+        wheelSound.play();
+
         spinAngleStart = Math.random() * 10 + 10;
         spinTime = 0;
         spinTimeTotal = Math.random() * 3 + 4 * 1000;
@@ -33,7 +40,8 @@ function drawFortuneWheel() {
         ctx.fillStyle = "#94a3b8";
         ctx.textAlign = "center";
         ctx.font = '20px Inter, sans-serif';
-        ctx.fillText("Unggah data peserta untuk memulai", 250, 250);
+        // Diperbaiki: Menggunakan kamus
+        ctx.fillText(translations[currentLanguage]['upload-for-wheel'], 250, 250);
         document.getElementById('spin-btn').disabled = true;
         return;
     }
@@ -72,6 +80,12 @@ function rotateWheel() {
 }
 
 function stopRotateWheel() {
+    // Diperbaiki: Menghentikan suara roda
+    if (wheelSound) {
+        wheelSound.pause();
+        wheelSound.currentTime = 0;
+    }
+
     clearTimeout(spinTimeout);
     const degrees = startAngle * 180 / Math.PI + 90;
     const arcd = 360 / peserta.length;

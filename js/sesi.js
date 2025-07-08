@@ -121,15 +121,15 @@ function loadSettings() {
 function populateSettingsForm() {
     const settingsFormContent = document.getElementById('settings-form-content');
     settingsFormContent.innerHTML = '';
+    const langDict = translations[currentLanguage];
 
-    let formHTML = `<h3 class="text-xl font-bold mb-4">Pengaturan Nilai Poin</h3><form id="settings-form-points" class="space-y-4">`;
+    // Diperbaiki: Bagian "Pengaturan Suara" dihapus
+    let formHTML = `<h3 class="text-xl font-bold mb-4" data-translate-key="settings-title-points">${langDict['settings-title-points']}</h3><form id="settings-form-points" class="space-y-4">`;
     TipePoin.forEach(tipe => {
-        formHTML += `<div class="flex items-center justify-between"><label for="setting-${tipe.key}" class="font-medium text-slate-700">${tipe.label}</label><input type="number" id="setting-${tipe.key}" name="${tipe.key}" value="${tipe.nilai}" class="w-24 p-2 border border-slate-300 rounded-md"></div>`;
+        const labelText = langDict[tipe.labelKey]; 
+        formHTML += `<div class="flex items-center justify-between"><label for="setting-${tipe.key}" class="font-medium text-slate-700">${labelText}</label><input type="number" id="setting-${tipe.key}" name="${tipe.key}" value="${tipe.nilai}" class="w-24 p-2 border border-slate-300 rounded-md"></div>`;
     });
-    formHTML += `</form><hr class="my-6"><h3 class="text-xl font-bold mb-4">Pengaturan Suara</h3><form id="settings-form-sounds" class="space-y-4">`;
-    formHTML += `<div class="flex items-center justify-between"><label for="setting-sound-point" class="font-medium text-slate-700">Suara Poin (URL .mp3)</label><input type="url" id="setting-sound-point" value="${soundSettings.point}" class="w-2/3 p-2 border border-slate-300 rounded-md"></div>`;
-    formHTML += `<div class="flex items-center justify-between"><label for="setting-sound-badge" class="font-medium text-slate-700">Suara Badge (URL .mp3)</label><input type="url" id="setting-sound-badge" value="${soundSettings.badge}" class="w-2/3 p-2 border border-slate-300 rounded-md"></div>`;
-    formHTML += `</form><button id="save-settings-btn" class="w-full mt-6 bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600">Simpan Semua Pengaturan</button>`;
+    formHTML += `</form><button id="save-settings-btn" class="w-full mt-8 bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600" data-translate-key="settings-save-all">${langDict['settings-save-all']}</button>`;
     
     settingsFormContent.innerHTML = formHTML;
     document.getElementById('save-settings-btn').addEventListener('click', saveSettings);
@@ -141,11 +141,9 @@ function saveSettings(event) {
         const input = document.getElementById(`setting-${tipe.key}`);
         if (input) tipe.nilai = parseInt(input.value, 10) || 0;
     });
-    soundSettings.point = document.getElementById('setting-sound-point').value;
-    soundSettings.badge = document.getElementById('setting-sound-badge').value;
 
+    // Diperbaiki: Penyimpanan pengaturan suara dihapus
     localStorage.setItem('gamifikasi-custom-points', JSON.stringify(TipePoin));
-    localStorage.setItem('gamifikasi-custom-sounds', JSON.stringify(soundSettings));
     
     document.getElementById('settings-modal').classList.add('hidden');
     renderControlsGameIndividu();

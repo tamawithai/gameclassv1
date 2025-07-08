@@ -1,14 +1,20 @@
 // === KONFIGURASI & VARIABEL GLOBAL ===
 
-// Pengaturan Suara (bisa diubah di modal pengaturan)
-let soundSettings = { point: '', badge: '' };
+// Diperbaiki: URL Suara sekarang di-hardcode
+let soundSettings = { 
+    point: 'https://raw.githubusercontent.com/tamawithai/gameclassv1/refs/heads/dev/assets/sounds/ding.mp3', 
+    badge: 'https://raw.githubusercontent.com/tamawithai/gameclassv1/refs/heads/dev/assets/sounds/confetti.mp3' 
+};
+
+// Variabel baru untuk menampung objek audio roda
+let wheelSound = null;
 
 // Tipe Poin (bisa diubah di modal pengaturan)
 let TipePoin = [
-    { key: 'tanya', label: 'Bertanya', nilai: 5, warna: 'bg-sky-500 hover:bg-sky-600' },
-    { key: 'jawab', label: 'Menjawab', nilai: 10, warna: 'bg-emerald-500 hover:bg-emerald-600' },
-    { key: 'sharing', label: 'Sharing', nilai: 15, warna: 'bg-amber-500 hover:bg-amber-600' },
-    { key: 'praktik', label: 'Sukarelawan Praktik', nilai: 20, warna: 'bg-indigo-500 hover:bg-indigo-600' }
+    { key: 'tanya',   labelKey: 'ask-question', nilai: 5,  warna: 'bg-sky-500 hover:bg-sky-600' },
+    { key: 'jawab',   labelKey: 'answer-question', nilai: 10, warna: 'bg-emerald-500 hover:bg-emerald-600' },
+    { key: 'sharing', labelKey: 'sharing-exp', nilai: 15, warna: 'bg-amber-500 hover:bg-amber-600' },
+    { key: 'praktik', labelKey: 'volunteer', nilai: 20, warna: 'bg-indigo-500 hover:bg-indigo-600' }
 ];
 
 // Sistem Badge (statis)

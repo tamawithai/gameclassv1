@@ -25,11 +25,16 @@ const translations = {
         "giving-points-for": "Giving points for:",
         "select-participant": "Select a Participant",
         
-        // Point Types
+        // Point Types & Settings
         "ask-question": "Ask",
         "answer-question": "Answer",
         "sharing-exp": "Sharing",
         "volunteer": "Volunteer",
+        "settings-title-points": "Point Value Settings",
+        "settings-title-sounds": "Sound Settings",
+        "settings-sound-point": "Point Sound (URL .mp3)",
+        "settings-sound-badge": "Badge Sound (URL .mp3)",
+        "settings-save-all": "Save All Settings",
 
         // Group Game Panel
         "amazing-race-title": "🏁 Amazing Race",
@@ -43,12 +48,15 @@ const translations = {
         "advance-button": "Advance!",
         
         // Fortune Wheel Panel
-        "fortune-wheel-title": "Roda Keberuntungan",
+        "fortune-wheel-title": "Fortune Wheel", // Ini sudah diperbaiki
         "spin-wheel": "Spin the Wheel!",
+        "upload-for-wheel": "Upload participant data to start",
 
         // Timer Panel
         "timer-title": "Timer",
-        "set-timer-presets": "Set Timer Presets",
+        "timer-preset-1m": "1 Minute",
+        "timer-preset-5m": "5 Minutes",
+        "timer-preset-10m": "10 Minutes",
         "custom-time-minutes": "Custom (minutes):",
         "set-time": "Set",
         "start-timer": "Start",
@@ -79,7 +87,7 @@ const translations = {
         "individual-game": "Game Individu",
         "group-game": "Game Grup",
         "fortune-wheel": "Roda Keberuntungan",
-        "timer": "Timer",
+        "timer": "Pengatur Waktu",
         "management": "Manajemen",
         "new-session": "Sesi Baru (Excel)",
         "continue-session": "Lanjutkan Sesi",
@@ -99,11 +107,16 @@ const translations = {
         "giving-points-for": "Memberi Poin untuk:",
         "select-participant": "Pilih Peserta",
 
-        // Point Types
+        // Point Types & Settings
         "ask-question": "Bertanya",
         "answer-question": "Menjawab",
         "sharing-exp": "Sharing",
         "volunteer": "Sukarelawan Praktik",
+        "settings-title-points": "Pengaturan Nilai Poin",
+        "settings-title-sounds": "Pengaturan Suara",
+        "settings-sound-point": "Suara Poin (URL .mp3)",
+        "settings-sound-badge": "Suara Badge (URL .mp3)",
+        "settings-save-all": "Simpan Semua Pengaturan",
 
         // Group Game Panel
         "amazing-race-title": "🏁 Amazing Race",
@@ -119,10 +132,13 @@ const translations = {
         // Fortune Wheel Panel
         "fortune-wheel-title": "Roda Keberuntungan",
         "spin-wheel": "Putar Roda!",
+        "upload-for-wheel": "Unggah data peserta untuk memulai",
 
         // Timer Panel
         "timer-title": "Pengatur Waktu",
-        "set-timer-presets": "Atur Waktu Cepat",
+        "timer-preset-1m": "1 Menit",
+        "timer-preset-5m": "5 Menit",
+        "timer-preset-10m": "10 Menit",
         "custom-time-minutes": "Kustom (menit):",
         "set-time": "Atur",
         "start-timer": "Mulai",

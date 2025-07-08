@@ -70,7 +70,9 @@ function renderRaceControls() {
     const controlButtonsContainer = document.getElementById('control-buttons');
     controlButtonsContainer.innerHTML = '';
     teams.forEach(team => {
-        const buttonHTML = `<button data-id="${team.id}" class="advance-btn text-white font-bold py-3 px-2 rounded-lg transition-transform hover:scale-105" style="background-color: ${team.color};">${team.icon} Maju!</button>`;
+        // Diperbaiki: Teks tombol "Maju!" diambil dari kamus
+        const buttonText = translations[currentLanguage]['advance-button'];
+        const buttonHTML = `<button data-id="${team.id}" class="advance-btn text-white font-bold py-3 px-2 rounded-lg transition-transform hover:scale-105" style="background-color: ${team.color};">${team.icon} ${buttonText}</button>`;
         controlButtonsContainer.insertAdjacentHTML('beforeend', buttonHTML);
     });
 }
