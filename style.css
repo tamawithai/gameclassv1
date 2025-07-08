@@ -1,0 +1,23 @@
+body { font-family: 'Inter', sans-serif; }
+.card-selected { transform: scale(1.05); box-shadow: 0 0 0 4px #3b82f6; border-color: #3b82f6; }
+.score-update-pop { animation: pop 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+@keyframes pop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+.scroll-panel::-webkit-scrollbar { width: 8px; }
+.scroll-panel::-webkit-scrollbar-track { background: transparent; }
+.scroll-panel::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+.main-menu-item.active { background-color: #3b82f6; color: white; }
+.badge-icon, .race-icon { transition: all 0.3s; }
+.badge-icon:hover { transform: scale(1.2); }
+.modal-enter { animation: modal-in 0.3s ease-out; }
+@keyframes modal-in { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+#main-sidebar { transition: width 0.3s ease-in-out; }
+#main-sidebar.collapsed .menu-text, #main-sidebar.collapsed #main-logo-text { display: none; }
+#main-sidebar.collapsed .justify-center { justify-content: center; }
+.progress-bar { transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+.race-icon { filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); }
+#wheelCanvas { transition: transform 5s cubic-bezier(.17,.93,.38,1); }
+.timer-display.ending { animation: flash-red 1s infinite; }
+@keyframes flash-red { 50% { color: #ef4444; } }
+#panel-timer:fullscreen #timer-controls-wrapper { display: none; }
+#panel-timer:fullscreen { display: flex; align-items: center; justify-content: center; background-color: #1e293b; }
+#panel-timer:fullscreen #timer-display { font-size: 25vw; margin: 0; color: white;}
