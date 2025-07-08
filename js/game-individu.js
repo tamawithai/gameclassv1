@@ -29,13 +29,15 @@ function cekDanBeriBadge(p, key) {
     const badgeInfo = SistemBadge[key];
     if (!badgeInfo || count === 0 || count % 5 !== 0) return;
 
-    const namaBadge = badgeInfo.tingkat[count];
-    if (!namaBadge) return;
+    const badgeKey = badgeInfo.tingkat[count]; // Ini adalah 'key', bukan nama
+    if (!badgeKey) return;
 
-    const sudahPunya = p.badges.some(b => b.nama === namaBadge);
+    // Cek apakah sudah punya badge dengan key yang sama
+    const sudahPunya = p.badges.some(b => b.key === badgeKey);
     if (!sudahPunya) {
-        p.badges.push({ nama: namaBadge, ikon: badgeInfo.ikon });
-        tampilkanNotifikasiBadge(p.nama, namaBadge, badgeInfo.ikon);
+        // Simpan 'key' nya, bukan namanya
+        p.badges.push({ key: badgeKey, ikon: badgeInfo.ikon });
+        tampilkanNotifikasiBadge(p.nama, badgeKey, badgeInfo.ikon);
     }
 }
 
@@ -48,7 +50,6 @@ function renderGridPeserta() {
     const gridContainer = document.getElementById('peserta-grid');
     gridContainer.innerHTML = '';
     if (peserta.length === 0) {
-        // Diperbaiki: Menggunakan kamus terjemahan
         gridContainer.innerHTML = `<p class="text-center col-span-full text-slate-500" data-translate-key="start-with-new-session">${translations[currentLanguage]['start-with-new-session']}</p>`;
         return;
     }
@@ -58,7 +59,13 @@ function renderGridPeserta() {
         card.id = `card-${p.id}`;
         card.className = `p-3 bg-white rounded-xl shadow-md cursor-pointer transition-all duration-300 ease-in-out flex flex-col items-center border-2 ${isSelected ? 'card-selected' : 'border-transparent'}`;
         card.onclick = () => pilihPeserta(p.id);
-        const badgesHTML = p.badges.map(b => `<span class="badge-icon text-2xl" title="${b.nama}">${b.ikon}</span>`).join('');
+
+        // Diperbaiki: Mengambil nama badge dari kamus untuk tooltip (title)
+        const badgesHTML = p.badges.map(b => {
+            const badgeName = translations[currentLanguage]['badge-names'][b.key];
+            return `<span class="badge-icon text-2xl" title="${badgeName}">${b.ikon}</span>`;
+        }).join('');
+
         card.innerHTML = `<img src="${p.avatar}" onerror="this.src='https://placehold.co/128x128/E5E7EB/333333?text=??'" alt="Avatar ${p.nama}" class="w-24 h-24 rounded-full object-cover"><h3 class="mt-3 font-semibold text-center text-slate-700">${p.nama}</h3><p class="skor text-2xl font-bold text-slate-800">${p.skor}</p><div class="flex space-x-2 mt-2 h-8 items-center">${badgesHTML}</div>`;
         gridContainer.appendChild(card);
     });
@@ -92,14 +99,15 @@ function renderBadgePanel() {
     const allBadges = peserta.flatMap(p => p.badges.map(b => ({ namaPeserta: p.nama, ...b }))).reverse();
     badgePanelContainer.innerHTML = '';
     if(allBadges.length === 0) {
-        // Diperbaiki: Menggunakan kamus terjemahan
         badgePanelContainer.innerHTML = `<p class="text-center text-sm text-slate-500" data-translate-key="no-badges-yet">${translations[currentLanguage]['no-badges-yet']}</p>`;
         return;
     }
     allBadges.forEach(badge => {
         const item = document.createElement('div');
         item.className = 'flex items-center p-2 bg-slate-100 rounded-lg text-sm';
-        item.innerHTML = `<span class="text-xl w-8 text-center">${badge.ikon}</span><div class="flex-1 truncate"><p class="font-bold text-slate-700">${badge.namaPeserta}</p><p class="text-slate-500">${badge.nama}</p></div>`;
+        // Ambil nama badge dari kamus menggunakan badge.key
+        const badgeName = translations[currentLanguage]['badge-names'][badge.key];
+        item.innerHTML = `<span class="text-xl w-8 text-center">${badge.ikon}</span><div class="flex-1 truncate"><p class="font-bold text-slate-700">${badge.namaPeserta}</p><p class="text-slate-500">${badgeName}</p></div>`;
         badgePanelContainer.appendChild(item);
     });
 }

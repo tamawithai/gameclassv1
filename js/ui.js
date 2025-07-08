@@ -73,11 +73,18 @@ function initializeSidebar() {
     setSidebarState(localStorage.getItem('sidebar-collapsed') === 'true');
 }
 
-function tampilkanNotifikasiBadge(namaPeserta, namaBadge, ikonBadge) {
+// ==========================================================
+// === FUNGSI YANG DIPERBAIKI ADA DI BAWAH INI ===
+// ==========================================================
+function tampilkanNotifikasiBadge(namaPeserta, badgeKey, ikonBadge) {
     playSound(soundSettings.badge);
     confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+    
+    // Sekarang 'badgeKey' diterima dengan benar dan bisa digunakan
+    const badgeName = translations[currentLanguage]['badge-names'][badgeKey];
+
     document.getElementById('badge-participant-name').textContent = namaPeserta;
-    document.getElementById('badge-name').textContent = namaBadge;
+    document.getElementById('badge-name').textContent = badgeName;
     document.getElementById('badge-icon-container').innerHTML = ikonBadge;
     document.getElementById('badge-modal').classList.remove('hidden');
 }

@@ -35,7 +35,21 @@ const translations = {
         "settings-sound-point": "Point Sound (URL .mp3)",
         "settings-sound-badge": "Badge Sound (URL .mp3)",
         "settings-save-all": "Save All Settings",
-
+        // ... (setelah bagian "Point Types") ...
+        "badge-names": {
+            "thinker-1": "Critical Thinker",
+            "thinker-2": "Expert Questioner",
+            "thinker-3": "Master Inquisitor",
+            "enlightened-1": "The Enlightened",
+            "enlightened-2": "Source of Knowledge",
+            "enlightened-3": "Walking Library",
+            "sharer-1": "Story Sharer",
+            "sharer-2": "Session Inspirer",
+            "sharer-3": "Peer Mentor",
+            "brave-1": "The Brave",
+            "brave-2": "Action Pioneer",
+            "brave-3": "Stage Expert"
+        },
         // Group Game Panel
         "amazing-race-title": "🏁 Amazing Race",
         "amazing-race-desc": "Set up teams and icons to start the race!",
@@ -120,7 +134,23 @@ const translations = {
         "settings-sound-point": "Suara Poin (URL .mp3)",
         "settings-sound-badge": "Suara Badge (URL .mp3)",
         "settings-save-all": "Simpan Semua Pengaturan",
-
+        
+        // ... (setelah bagian "Point Types") ...
+        "badge-names": {
+            "thinker-1": "Pemikir Kritis",
+            "thinker-2": "Pakar Penanya",
+            "thinker-3": "Inkuisitor Ulung",
+            "enlightened-1": "Sang Pencerah",
+            "enlightened-2": "Sumber Pengetahuan",
+            "enlightened-3": "Pustakawan Berjalan",
+            "sharer-1": "Pembagi Cerita",
+            "sharer-2": "Inspirator Sesi",
+            "sharer-3": "Mentor Sejawat",
+            "brave-1": "Sang Pemberani",
+            "brave-2": "Pelopor Aksi",
+            "brave-3": "Ahli Panggung"
+        },
+        
         // Group Game Panel
         "amazing-race-title": "🏁 Amazing Race",
         "amazing-race-desc": "Atur tim dan ikon untuk memulai balapan!",

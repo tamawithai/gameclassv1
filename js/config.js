@@ -19,10 +19,10 @@ let TipePoin = [
 
 // Sistem Badge (statis)
 const SistemBadge = {
-    tanya: { ikon: '🧠', tingkat: { 5: 'Pemikir Kritis', 10: 'Pakar Penanya', 15: 'Inkuisitor Ulung' } },
-    jawab: { ikon: '💡', tingkat: { 5: 'Sang Pencerah', 10: 'Sumber Pengetahuan', 15: 'Pustakawan Berjalan' } },
-    sharing: { ikon: '❤️', tingkat: { 5: 'Pembagi Cerita', 10: 'Inspirator Sesi', 15: 'Mentor Sejawat' } },
-    praktik: { ikon: '🚀', tingkat: { 5: 'Sang Pemberani', 10: 'Pelopor Aksi', 15: 'Ahli Panggung' } }
+    tanya: { ikon: '🧠', tingkat: { 5: 'thinker-1', 10: 'thinker-2', 15: 'thinker-3' } },
+    jawab: { ikon: '💡', tingkat: { 5: 'enlightened-1', 10: 'enlightened-2', 15: 'enlightened-3' } },
+    sharing: { ikon: '❤️', tingkat: { 5: 'sharer-1', 10: 'sharer-2', 15: 'sharer-3' } },
+    praktik: { ikon: '🚀', tingkat: { 5: 'brave-1', 10: 'brave-2', 15: 'brave-3' } }
 };
 
 // Data utama aplikasi
