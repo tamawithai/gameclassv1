@@ -20,5 +20,8 @@ window.onload = function() {
     updateTimerDisplay();
     
     // 4. Tampilkan panel default
-    showPanel('individu'); 
+    showPanel('individu');
+    
+    // Di dalam window.onload, di bawah setup lainnya
+    setupQnSListeners();
 };

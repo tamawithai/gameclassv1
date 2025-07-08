@@ -55,7 +55,7 @@ const translations = {
         "amazing-race-desc": "Set up teams and icons to start the race!",
         "team-count": "Number of Teams (2-8)",
         "team-name-placeholder": "Team Name",
-        "start-race": "Start Race!",
+        "start-race": "Start Game",
         "race-in-progress": "Race in Progress",
         "reset-and-start-new": "Reset & Start New",
         "point-controls": "Point Controls",
@@ -94,6 +94,27 @@ const translations = {
         "winner-modal-title": "The winner is...",
         "start-new-race": "Start New Race",
         "wheel-winner-close": "Close",
+
+        // ... (setelah bagian Modals) ...
+        // Question & Spin Game
+        "qns-game": "Question & Spin",
+        "qns-title": "Question & Spin",
+        "qns-desc": "Choose a game mode to start.",
+        "qns-individual-mode": "Individual Play",
+        "qns-group-mode": "Group Play",
+        "qns-individual-panel-title": "Participation Panel (Q&S)",
+        "qns-individual-panel-desc": "Select a participant to spin the wheel of points!",
+        "qns-back-to-mode": "Back",
+        "qns-spin-for": "Spin the wheel for",
+
+        // ... (setelah qns-spin-for) ...
+        "qns-group-setup-title": "Group Setup (Q&S)",
+        "qns-group-setup-desc": "Set up your teams and icons to begin.",
+        "qns-group-panel-title": "Group Panel (Q&S)",
+        "qns-group-panel-desc": "Select a group to spin the wheel of points!",
+
+        // ... (setelah qns-spin-for) ...
+        "qns-gets-points": "gets {score} points!",
 
         // Di dalam objek en
         "download-sample": "Download sample file here.",
@@ -156,7 +177,7 @@ const translations = {
         "amazing-race-desc": "Atur tim dan ikon untuk memulai balapan!",
         "team-count": "Jumlah Tim (2-8)",
         "team-name-placeholder": "Nama Tim",
-        "start-race": "Mulai Balapan!",
+        "start-race": "Mulai Permainan",
         "race-in-progress": "Balapan Berlangsung",
         "reset-and-start-new": "Reset & Mulai Baru",
         "point-controls": "Kontrol Poin",
@@ -195,6 +216,27 @@ const translations = {
         "winner-modal-title": "Pemenangnya adalah...",
         "start-new-race": "Mulai Balapan Baru",
         "wheel-winner-close": "Tutup",
+
+        // ... (setelah bagian Modals) ...
+        // Question & Spin Game
+        "qns-game": "Question & Spin",
+        "qns-title": "Question & Spin",
+        "qns-desc": "Pilih mode permainan untuk memulai.",
+        "qns-individual-mode": "Main Individu",
+        "qns-group-mode": "Main Grup",
+        "qns-individual-panel-title": "Panel Partisipasi (Q&S)",
+        "qns-individual-panel-desc": "Pilih peserta untuk memutar roda poin!",
+        "qns-back-to-mode": "Kembali",
+        "qns-spin-for": "Putar roda untuk",
+
+        // ... (setelah qns-spin-for) ...
+        "qns-group-setup-title": "Pengaturan Grup (Q&S)",
+        "qns-group-setup-desc": "Atur tim dan ikon untuk memulai.",
+        "qns-group-panel-title": "Panel Grup (Q&S)",
+        "qns-group-panel-desc": "Pilih grup untuk memutar roda poin!",
+
+        // ... (setelah qns-spin-for) ...
+        "qns-gets-points": "mendapatkan {score} poin!",
 
         // Di dalam objek id
         "download-sample": "Unduh contoh file di sini.",
