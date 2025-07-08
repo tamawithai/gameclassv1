@@ -33,3 +33,18 @@ function setLanguage(lang) {
     // Perbarui placeholder
     updatePlaceholders();
 }
+
+// Fungsi ini hilang dari kode Anda sebelumnya, mari kita tambahkan kembali.
+function initializeLanguage() {
+    const savedLang = localStorage.getItem('gameclass-language');
+    const lang = (savedLang === 'en' || savedLang === 'id') ? savedLang : 'id';
+    setLanguage(lang);
+}
+
+// Fungsi ini juga hilang, kita tambahkan kembali.
+function updatePlaceholders() {
+    const teamNamePlaceholder = document.querySelector('input[placeholder^="Nama Tim"], input[placeholder^="Team Name"]');
+    if (teamNamePlaceholder) {
+        teamNamePlaceholder.placeholder = translations[currentLanguage]['team-name-placeholder'] || 'Team Name';
+    }
+}

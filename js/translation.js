@@ -43,7 +43,7 @@ const translations = {
         "advance-button": "Advance!",
         
         // Fortune Wheel Panel
-        "fortune-wheel-title": "Roda Keberuntungan", // Tetap sama, asumsi nama fitur
+        "fortune-wheel-title": "Roda Keberuntungan",
         "spin-wheel": "Spin the Wheel!",
 
         // Timer Panel
