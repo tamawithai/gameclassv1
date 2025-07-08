@@ -21,3 +21,7 @@ body { font-family: 'Inter', sans-serif; }
 #panel-timer:fullscreen #timer-controls-wrapper { display: none; }
 #panel-timer:fullscreen { display: flex; align-items: center; justify-content: center; background-color: #1e293b; }
 #panel-timer:fullscreen #timer-display { font-size: 25vw; margin: 0; color: white;}
+.lang-btn-active {
+    background-color: #3b82f6 !important; /* Biru */
+    color: white !important;
+}

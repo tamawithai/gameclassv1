@@ -30,8 +30,8 @@
             </nav>
             <div class="mt-auto pt-4 border-t border-slate-700 flex flex-col items-center justify-center">
                 <div class="flex space-x-2 mb-3 menu-text">
-                    <button onclick="setLanguage('id')" class="px-2 py-1 text-xs rounded-md bg-slate-700 hover:bg-blue-500">ID</button>
-                    <button onclick="setLanguage('en')" class="px-2 py-1 text-xs rounded-md bg-slate-700 hover:bg-blue-500">EN</button>
+                    <button id="lang-btn-id" onclick="setLanguage('id')" class="px-2 py-1 text-xs rounded-md bg-slate-700 hover:bg-blue-500">ID</button>
+                    <button id="lang-btn-en" onclick="setLanguage('en')" class="px-2 py-1 text-xs rounded-md bg-slate-700 hover:bg-blue-500">EN</button>
                 </div>
                 <footer data-translate-key="made-with" class="mb-2 text-xs text-center text-slate-500 menu-text">Dibuat dengan ❤️ ©️tamawith.ai 2025</footer>
                 <button id="sidebar-toggle" type="button" class="text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none rounded-lg text-sm p-2.5"><svg id="sidebar-toggle-close-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg><svg id="sidebar-toggle-open-icon" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
@@ -96,12 +96,14 @@
     <div id="wheel-winner-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-2xl shadow-2xl p-12 w-full max-w-md text-center relative modal-enter"><img id="wheel-winner-avatar" src="" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 border-4 border-amber-400 shadow-lg"><h2 id="wheel-winner-name" class="text-4xl font-black my-4 text-slate-800"></h2><button id="close-wheel-winner-btn" data-translate-key="wheel-winner-close" class="mt-8 bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700">Tutup</button></div></div>
 
     <script src="js/config.js"></script>
-    <script src="js/translation.js"></script> <script src="js/language.js"></script> <script src="js/ui.js"></script>
+    <script src="js/translation.js"></script>
+    <script src="js/language.js"></script>
     <script src="js/sesi.js"></script>
-    <script src="js/game-individu.js"></script>
-    <script src="js/game-grup.js"></script>
     <script src="js/fortune-wheel.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/game-grup.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game-individu.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

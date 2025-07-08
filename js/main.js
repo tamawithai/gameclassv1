@@ -3,9 +3,9 @@
 window.onload = function() {
     console.log("Aplikasi Gameclass dimuat!");
 
-    // 1. Muat semua pengaturan dari Local Storage
+    // 1. Muat pengaturan dan inisialisasi bahasa
     loadSettings();
-    initializeLanguage(); // -> TAMBAHKAN BARIS INI
+    initializeLanguage();
     
     // 2. Siapkan semua event listener untuk UI, Sesi, Game, dll.
     setupUIListeners();
