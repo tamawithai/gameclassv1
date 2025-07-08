@@ -26,6 +26,9 @@ function setupUIListeners() {
     // Menu Manajemen
     document.getElementById('menu-sesi-baru').addEventListener('click', (e) => { e.preventDefault(); document.getElementById('upload-modal').classList.remove('hidden'); });
     document.getElementById('menu-pengaturan').addEventListener('click', (e) => { e.preventDefault(); populateSettingsForm(); document.getElementById('settings-modal').classList.remove('hidden'); });
+    
+    // Di dalam fungsi setupUIListeners()
+    document.getElementById('menu-qns').addEventListener('click', (e) => { e.preventDefault(); showPanel('qns'); });
 }
 
 function showPanel(panelId) {
@@ -33,7 +36,8 @@ function showPanel(panelId) {
         document.getElementById('panel-individu'),
         document.getElementById('panel-grup'),
         document.getElementById('panel-fortune-wheel'),
-        document.getElementById('panel-timer')
+        document.getElementById('panel-timer'),
+        document.getElementById('panel-qns') // Ditambahkan
     ];
     allPanels.forEach(p => p.classList.add('hidden'));
 
@@ -51,6 +55,10 @@ function showPanel(panelId) {
     } else if (panelId === 'timer') {
         document.getElementById('panel-timer').classList.remove('hidden');
         activeMenu = document.getElementById('menu-timer');
+    } else if (panelId === 'qns') { // Ditambahkan
+        document.getElementById('panel-qns').classList.remove('hidden');
+        activeMenu = document.getElementById('menu-qns');
+        resetQnSGame(); // Reset permainan setiap kali panel dibuka
     }
 
     document.querySelectorAll('.main-menu-item').forEach(el => el.classList.remove('active'));
