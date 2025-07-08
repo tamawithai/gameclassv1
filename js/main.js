@@ -5,6 +5,7 @@ window.onload = function() {
 
     // 1. Muat semua pengaturan dari Local Storage
     loadSettings();
+    initializeLanguage(); // -> TAMBAHKAN BARIS INI
     
     // 2. Siapkan semua event listener untuk UI, Sesi, Game, dll.
     setupUIListeners();
