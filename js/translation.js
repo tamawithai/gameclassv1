@@ -80,6 +80,9 @@ const translations = {
         "winner-modal-title": "The winner is...",
         "start-new-race": "Start New Race",
         "wheel-winner-close": "Close",
+
+        // Di dalam objek en
+        "download-sample": "Download sample file here.",
     },
     id: {
         // Sidebar
@@ -162,5 +165,8 @@ const translations = {
         "winner-modal-title": "Pemenangnya adalah...",
         "start-new-race": "Mulai Balapan Baru",
         "wheel-winner-close": "Tutup",
+
+        // Di dalam objek id
+        "download-sample": "Unduh contoh file di sini.",
     }
 };

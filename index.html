@@ -89,7 +89,30 @@
         </div>
     </div>
 
-    <div id="upload-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 flex items-center justify-center p-4"><div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg relative modal-enter"><button id="close-upload-modal-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">&times;</button><h2 data-translate-key="upload-modal-title" class="text-2xl font-bold mb-4">Unggah File Data Peserta</h2><div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded-r-lg mb-6"><p data-translate-key="excel-file-structure" class="font-bold">Struktur File Excel (.xlsx):</p><ul class="list-disc list-inside mt-2 text-sm"><li data-translate-key="excel-rule-1">Baris pertama harus berisi judul kolom (Header).</li><li data-translate-key="excel-rule-2">Kolom A harus berjudul <strong>Nama</strong>.</li><li data-translate-key="excel-rule-3">Kolom B harus berjudul <strong>Avatar</strong> (berisi link URL gambar).</li></ul></div><input type="file" id="excel-file-input" accept=".xlsx, .xls" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"/><p id="upload-status" class="text-sm mt-4 text-center"></p></div></div>
+    <div id="upload-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg relative modal-enter">
+        <button id="close-upload-modal-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">&times;</button>
+        <h2 data-translate-key="upload-modal-title" class="text-2xl font-bold mb-4">Unggah File Data Peserta</h2>
+        <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded-r-lg mb-4">
+            <p data-translate-key="excel-file-structure" class="font-bold">Struktur File Excel (.xlsx):</p>
+            <ul class="list-disc list-inside mt-2 text-sm">
+                <li data-translate-key="excel-rule-1">Baris pertama harus berisi judul kolom (Header).</li>
+                <li data-translate-key="excel-rule-2">Kolom A harus berjudul <strong>Nama</strong>.</li>
+                <li data-translate-key="excel-rule-3">Kolom B harus berjudul <strong>Avatar</strong> (berisi link URL gambar).</li>
+            </ul>
+        </div>
+        
+        <a href="https://raw.githubusercontent.com/tamawithai/gameclassv1/dev/assets/data/contoh-peserta.xlsx" 
+           download="contoh-peserta.xlsx"
+           data-translate-key="download-sample"
+           class="text-sm text-blue-600 hover:underline mb-6 block">
+           Unduh contoh file di sini.
+        </a>
+
+        <input type="file" id="excel-file-input" accept=".xlsx, .xls" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"/>
+        <p id="upload-status" class="text-sm mt-4 text-center"></p>
+    </div>
+    </div>
     <div id="settings-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 flex items-center justify-center p-4"><div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-lg relative modal-enter"><button id="close-settings-modal-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800">&times;</button><div id="settings-form-content"></div></div></div>
     <div id="badge-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4"><div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-sm text-center relative modal-enter"><div id="badge-icon-container" class="text-7xl mb-4"></div><p data-translate-key="badge-modal-congrats" class="text-lg text-slate-500">Selamat kepada</p><h2 id="badge-participant-name" class="text-3xl font-bold my-2"></h2><p data-translate-key="badge-modal-earned" class="text-lg text-slate-500">telah meraih badge</p><h3 id="badge-name" class="text-2xl font-bold text-blue-500 mt-2"></h3><button id="close-badge-modal-btn" data-translate-key="badge-modal-continue" class="mt-8 bg-blue-500 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-600">Lanjutkan!</button></div></div>
     <div id="winner-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4"><div class="bg-slate-800 border-2 border-amber-400 rounded-2xl shadow-2xl p-8 w-full max-w-md text-center relative modal-enter"><div id="winner-icon" class="text-8xl mb-4 scale-150"></div><p data-translate-key="winner-modal-title" class="text-2xl text-slate-400">Pemenangnya adalah...</p><h2 id="winner-name" class="text-5xl font-black my-4 text-amber-300 uppercase"></h2><button id="restart-from-winner-btn" data-translate-key="start-new-race" class="mt-8 bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700">Mulai Balapan Baru</button></div></div>
