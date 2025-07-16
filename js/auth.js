@@ -45,7 +45,7 @@ export async function handleLogout() {
         await signOut(window.auth);
         console.log("Logout berhasil.");
         // Tambahkan redirect langsung setelah logout sukses
-        window.location.href = 'landing_page.html';
+        window.location.href = 'index.html';
     } catch (error) {
         console.error("Logout gagal:", error);
         alert("Gagal logout, silakan coba lagi.");

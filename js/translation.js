@@ -246,8 +246,8 @@ const translations = {
 
         // Di dalam objek id
         "download-sample": "Unduh contoh file di sini.",
-        "login": "Login",
-        "logout": "Logout",
+        "login": "Masuk",
+        "logout": "Keluar",
         "landing-page-title": "Selamat Datang di Gameclass", // Tambahkan ini
         "landing-hero-title": "Selamat Datang di Gameclass!",
         "landing-hero-subtitle": "Platform Gamifikasi untuk Pembelajaran Interaktif.",
