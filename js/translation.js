@@ -118,6 +118,12 @@ const translations = {
 
         // Di dalam objek en
         "download-sample": "Download sample file here.",
+
+        "login": "Login",
+        "logout": "Logout",
+        "landing-page-title": "Welcome to Gameclass", // Tambahkan ini
+        "landing-hero-title": "Welcome to Gameclass!",
+        "landing-hero-subtitle": "Gamification Platform for Interactive Learning.",
     },
     id: {
         // Sidebar
@@ -240,5 +246,10 @@ const translations = {
 
         // Di dalam objek id
         "download-sample": "Unduh contoh file di sini.",
+        "login": "Login",
+        "logout": "Logout",
+        "landing-page-title": "Selamat Datang di Gameclass", // Tambahkan ini
+        "landing-hero-title": "Selamat Datang di Gameclass!",
+        "landing-hero-subtitle": "Platform Gamifikasi untuk Pembelajaran Interaktif.",
     }
 };
