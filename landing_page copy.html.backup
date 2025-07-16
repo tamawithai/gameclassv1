@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gameclass - Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb; /* putih cerah */
+      color: #1e293b;             /* biru dongker gelap */
+    }
+    header, footer {
+      background-color: #1e293b;  /* biru dongker */
+      color: white;
+    }
+    .btn-primary {
+      background-color: #2563eb;  /* biru */
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #1e40af;  /* biru lebih gelap */
+    }
+    .icon-container {
+      width: 48px;
+      height: 48px;
+      background-color: #e0e7ff;  /* biru muda */
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;             /* biru */
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 shadow-md">
+    <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-4 select-none cursor-default">
+        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold text-white">GC</div>
+        <span class="text-white font-extrabold text-xl tracking-wide">Gameclass</span>
+      </div>
+      <button id="login-btn" class="btn-primary px-5 py-2 rounded-lg font-semibold transition shadow">
+        Login
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative bg-gray-900 overflow-hidden shadow-lg">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="assets/videos/hero-bg.mp4" type="video/mp4" />
+    </video>
+    <!-- Overlay Gradasi -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10"></div>
+    <!-- Konten Hero -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+      <div class="md:col-span-3 space-y-6 text-white">
+        <p class="uppercase font-semibold tracking-wider">Gameclass 2.0</p>
+        <h1 class="text-5xl font-extrabold leading-tight max-w-xl text-white">
+          Ikuti Tantangan Seru, Raih Poin, <br />
+          dan Asah Kemampuan Anda dengan Gameclass
+        </h1>
+        <p class="text-lg max-w-lg text-white/90">
+          Platform gamifikasi untuk pembelajaran interaktif yang membantu Anda belajar dan berkompetisi dengan seru.
+        </p>
+        <div class="flex">
+          <button id="start-btn" class="btn-primary px-8 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-105 transition">
+            Mulai Sekarang
+          </button>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <img src="https://raw.githubusercontent.com/tamawithai/gameclassv1/refs/heads/main/assets/images/hero.png" alt="Hero Illustration" class="w-full h-auto object-contain" />
+      </div>
+    </div>
+  </section>
+
+ <!-- GAME MODES SECTION -->
+    <section class="max-w-7xl mx-auto py-16 px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Mode Gameclass</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">Pilih mode permainan yang sesuai kebutuhan pembelajaran dan
+                suasana Anda.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <!-- Game Individu -->
+            <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                <div class="icon-container mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-1">Game Individu</h3>
+                <p class="text-gray-600 text-sm">Permainan kompetitif untuk individu yang ingin meningkatkan kemampuan
+                    secara personal.</p>
+            </div>
+            <!-- Game Grup -->
+            <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                <div class="icon-container mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.122-1.28-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.122-1.28.356-1.857m0 0a5.002 5.002 0 019.288 0" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-1">Game Grup</h3>
+                <p class="text-gray-600 text-sm">Mode permainan untuk tim yang ingin berkolaborasi dan berkompetisi
+                    bersama.</p>
+            </div>
+            <!-- Roda Keberuntungan -->
+            <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                <div class="icon-container mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.552 8.052a3.375 3.375 0 015.254 0 3.375 3.375 0 010 5.254M4.194 18.948a3.375 3.375 0 010-5.254 3.375 3.375 0 015.254 0M18.948 4.194a3.375 3.375 0 010 5.254 3.375 3.375 0 01-5.254 0M8.052 15.552a3.375 3.375 0 01-5.254 0 3.375 3.375 0 010-5.254M12 18.75a.75.75 0 00.75-.75V12a.75.75 0 00-1.5 0v6a.75.75 0 00.75.75z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 5.25a.75.75 0 01.75-.75h.01a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V5.25zM18.75 12a.75.75 0 00-.75.75v.01a.75.75 0 001.5 0V12a.75.75 0 00-.75-.75zM5.25 12a.75.75 0 01-.75.75v.01a.75.75 0 011.5 0V12a.75.75 0 01-.75-.75z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-1">Roda Keberuntungan</h3>
+                <p class="text-gray-600 text-sm">Fitur untuk memutar roda dan menentukan hadiah secara acak.</p>
+            </div>
+            <!-- Pengatur Waktu -->
+            <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                <div class="icon-container mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-1">Pengatur Waktu</h3>
+                <p class="text-gray-600 text-sm">Pengatur waktu yang fleksibel untuk berbagai sesi belajar atau kuis.
+                </p>
+            </div>
+            <!-- Question & Spin -->
+            <div class="bg-white rounded-xl shadow-md p-6 text-left">
+                <div class="icon-container mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="font-semibold text-lg mb-1">Question & Spin</h3>
+                <p class="text-gray-600 text-sm">Mode permainan dengan pertanyaan dan roda putar untuk menambah
+                    keseruan.</p>
+            </div>
+        </div>
+    </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="bg-white py-16 px-6">
+    <div class="max-w-7xl mx-auto text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Apa Kata Mereka?</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Berikut beberapa testimoni dari pengguna yang sudah merasakan manfaat Gameclass.
+      </p>
+    </div>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimoni 1 -->
+      <div class="p-6 bg-white rounded-lg shadow">
+        <p class="italic text-gray-700">
+          “Gameclass benar-benar membantu saya memahami materi dengan cara yang menyenangkan dan interaktif.”
+        </p>
+        <p class="mt-4 font-semibold">– Andi, Pelajar</p>
+      </div>
+      <!-- Testimoni 2 -->
+      <div class="p-6 bg-white rounded-lg shadow">
+        <p class="italic text-gray-700">
+          “Platform ini membuat proses belajar menjadi kompetitif dan memotivasi saya untuk terus maju.”
+        </p>
+        <p class="mt-4 font-semibold">– Sari, Guru</p>
+      </div>
+      <!-- Testimoni 3 -->
+      <div class="p-6 bg-white rounded-lg shadow">
+        <p class="italic text-gray-700">
+          “Interface yang mudah digunakan dan fitur yang lengkap membuat Gameclass jadi favorit saya.”
+        </p>
+        <p class="mt-4 font-semibold">– Budi, Pengembang Kurikulum</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-white py-6 select-none cursor-default">
+    © 2025 Gameclass. All rights reserved.
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBZGrmlIHTzYITmeUh8aMMucHQJ5Si20vM",
+      authDomain: "gameclassapp.firebaseapp.com",
+      projectId: "gameclassapp",
+      storageBucket: "gameclassapp.firebasestorage.app",
+      messagingSenderId: "940436859795",
+      appId: "1:940436859795:web:7bf934db3cdf9446535666"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    window.auth = auth;
+
+    // Login via Firebase saat klik tombol Login
+    document.getElementById('login-btn').addEventListener('click', async () => {
+      const provider = new GoogleAuthProvider();
+      try {
+        await signInWithPopup(auth, provider);
+        window.location.href = 'app.html';
+      } catch (error) {
+        console.error("Login gagal:", error);
+      }
+    });
+
+    // Login via Firebase saat klik tombol Mulai Sekarang
+    document.getElementById('start-btn').addEventListener('click', async () => {
+      const provider = new GoogleAuthProvider();
+      try {
+        await signInWithPopup(auth, provider);
+        window.location.href = 'app.html';
+      } catch (error) {
+        console.error("Login gagal:", error);
+      }
+    });
+  </script>
+</body>
+</html>
