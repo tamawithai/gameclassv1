@@ -9,6 +9,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"; // Ganti 10.X.X dengan versi terbaru
+      import { getAuth } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js"; // Ganti 10.X.X dengan versi terbaru
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js"; // Ganti 10.X.X dengan versi terbaru
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // Paste the firebaseConfig object you copied from Firebase Console here
+      const firebaseConfig = {
+            apiKey: "AIzaSyBZGrmlIHTzYITmeUh8aMMucHQJ5Si20vM",
+            authDomain: "gameclassapp.firebaseapp.com",
+            projectId: "gameclassapp",
+            storageBucket: "gameclassapp.firebasestorage.app",
+            messagingSenderId: "940436859795",
+            appId: "1:940436859795:web:7bf934db3cdf9446535666"
+        };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      // Export auth and db so they can be imported in other modules
+      window.auth = getAuth(app); // Akses global untuk auth
+      window.db = getFirestore(app); // Akses global untuk firestore
+    </script>
 </head>
 <body class="bg-slate-100 text-slate-800">
 
